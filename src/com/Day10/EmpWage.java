@@ -1,11 +1,16 @@
 package com.Day10;
 public class EmpWage {
-    public static final int isPartTime = 1;
-    public static final int isFullTime = 2;
-    public static final int emp_rate_per_hr = 20;
-    public static final int working_days_in_month = 20;
-    public static final int max_working_hrs_in_month = 100;
     public static void main(String[] args) {
+        EmpWage e = new EmpWage();
+        e.employeeWageComputation();
+    }
+    void employeeWageComputation() {
+        final int isPartTime = 1;
+        final int isFullTime = 2;
+        final int emp_rate_per_hr = 20;
+        final int working_days_in_month = 20;
+        final int max_working_hrs_in_month = 100;
+        System.out.println("Welcome to Employee Wage Computation Program");
         int emp_hrs;
         int total_emp_hrs = 0;
         int total_working_days = 0;
@@ -27,5 +32,4 @@ public class EmpWage {
         int totalEmpWage = total_emp_hrs * emp_rate_per_hr;
         System.out.println("Total Employee Wage : " + totalEmpWage);
     }
-
 }
