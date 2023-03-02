@@ -1,15 +1,27 @@
 package com.Day10;
 public class EmpWage {
+    private static final int isPartTime = 1;
+    private static final int isFullTime = 2;
+    private final String companyName;
+    private final int max_working_hrs_in_month;
+    private final int working_days_in_month;
+    private final int emp_rate_per_hr;
+
+    EmpWage(String companyName, int max_working_hrs_in_month, int working_days_in_month, int emp_rate_per_hr){
+        this.companyName = companyName;
+        this.max_working_hrs_in_month = max_working_hrs_in_month;
+        this.working_days_in_month = working_days_in_month;
+        this.emp_rate_per_hr = emp_rate_per_hr;
+
+    }
     public static void main(String[] args) {
-        EmpWage e = new EmpWage();
-        e.employeeWageComputation();
+        EmpWage e1 = new EmpWage("CGL", 100, 20, 20);
+        EmpWage e2 = new EmpWage("ABB", 150, 25, 25);
+        e1.employeeWageComputation();
+        e2.employeeWageComputation();
     }
     void employeeWageComputation() {
-        final int isPartTime = 1;
-        final int isFullTime = 2;
-        final int emp_rate_per_hr = 20;
-        final int working_days_in_month = 20;
-        final int max_working_hrs_in_month = 100;
+
         System.out.println("Welcome to Employee Wage Computation Program");
         int emp_hrs;
         int total_emp_hrs = 0;
@@ -30,6 +42,6 @@ public class EmpWage {
             System.out.println(" Day : " +total_working_days + " Employee Hrs : " +emp_hrs);
         }
         int totalEmpWage = total_emp_hrs * emp_rate_per_hr;
-        System.out.println("Total Employee Wage : " + totalEmpWage);
+        System.out.println("Monthly total wage for " + companyName + " : " + totalEmpWage );
     }
 }
